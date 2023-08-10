@@ -92,4 +92,28 @@ console.log("speed movie stats:", speed.isCheckedOut);
 speed.addRating(1);
 speed.addRating(1);
 speed.addRating(5);
-console.log('speed average rating :',speed.getAverageRating());
+console.log("speed average rating :", speed.getAverageRating());
+
+// Cd child class of media
+class CD extends Media {
+  constructor(title, artist, songs) {
+    super(title);
+    this._artist = artist;
+    this._songs = [songs];
+  }
+  // getters
+  get artist() {
+    return this._artist;
+  }
+  get songs() {
+    return this._songs;
+  }
+}
+
+const karma = new CD("Karma", "Madd", ["song1", "song2", "song3", "song4"]);
+karma.toggleCheckOutStatus();
+console.log("karma cd stats :", karma.isCheckedOut);
+karma.addRating(4);
+karma.addRating(2);
+karma.addRating(5);
+console.log("average rating of karma is :", karma.getAverageRating());

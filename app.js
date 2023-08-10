@@ -108,6 +108,7 @@ class CD extends Media {
   get songs() {
     return this._songs;
   }
+
 }
 
 const karma = new CD("Karma", "Madd", ["song1", "song2", "song3", "song4"]);
